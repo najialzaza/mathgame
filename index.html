@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مغامرة الأرقام السحرية 🌟</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Atmosphere -->
+    <div class="sun"></div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="bird bird1">🐦</div>
+    <div class="bird bird2">🐦</div>
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <div class="game-wrapper">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌟 مغامرة الأرقام السحرية 🌟</h1>
+            <div class="subtitle">تعلّم الجمع والطرح مع زيزو!</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-chip">
+                <span class="icon">⭐</span>
+                النقاط: <span class="val" id="scoreDisplay">0</span>
+            </div>
+            <div class="stat-chip">
+                <span class="icon">💖</span>
+                <div class="hearts" id="heartsDisplay"></div>
+            </div>
+            <div class="stat-chip">
+                <span class="icon">🏅</span>
+                المستوى: <span class="val" id="levelDisplay">1</span>
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-wrap">
+            <div class="progress-bar" id="progressBar" style="width:0%"></div>
+        </div>
+
+        <!-- Level selector -->
+        <div class="level-selector">
+            <button class="level-btn active" onclick="setLevel(1)">🌱 سهل</button>
+            <button class="level-btn" onclick="setLevel(2)">⚡ متوسط</button>
+            <button class="level-btn" onclick="setLevel(3)">🔥 صعب</button>
+        </div>
+
+        <!-- Character -->
+        <div class="character-wrap">
+            <div class="bubble" id="bubble">أهلاً! أنا زيزو، هيا نلعب معاً! 🎉</div>
+            <span class="character" id="character">🦊</span>
+        </div>
+
+        <!-- Game area -->
+        <div id="gameArea">
+            <!-- Question card -->
+            <div class="question-card">
+                <div class="operation-badge badge-add" id="operationBadge">➕ جمع</div>
+                <div class="visual-objects" id="visualObjects"></div>
+                <div class="question-display" id="questionDisplay"></div>
+            </div>
+
+            <!-- Hint -->
+            <div class="hint-wrap" id="hintWrap"></div>
+
+            <!-- Choices -->
+            <div class="choices-grid" id="choicesGrid"></div>
+
+            <!-- Feedback -->
+            <div class="feedback hidden" id="feedback"></div>
+
+            <!-- Next button -->
+            <button class="next-btn" id="nextBtn" onclick="nextQuestion()">السؤال التالي ← </button>
+        </div>
+
+        <!-- Results screen -->
+        <div class="results-screen" id="resultsScreen">
+            <div class="results-card">
+                <div class="rating" id="resultRating"></div>
+                <h2 id="resultTitle"></h2>
+                <div class="final-score">⭐ <span id="finalScore"></span> نقطة</div>
+                <div class="msg" id="resultMsg"></div>
+                <div style="font-size:1rem; color:#888; margin-bottom:8px;">أجبت صح على <span id="correctCount"></span> من <span id="totalCount"></span> سؤال</div>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">🔄 العب مجدداً!</button>
+        </div>
+    </div>
+<!-- ملفات الصوت -->
+<audio id="soundCorrect" src="success.mp3"></audio>
+<audio id="soundWrong" src="wrong.mp3"></audio>
+<audio id="soundClick" src="click.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

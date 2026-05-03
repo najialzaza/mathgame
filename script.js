@@ -65,7 +65,7 @@ function init() {
 }
 
 function setLevel(lvl) {
-  alert("أميرة صدعت :)");
+  //alert("أميرة صدعت :)");
   console.log("تم اختيار المستوى");
   playSound('soundClick'); // تشغيل صوت النقرة
   difficulty = lvl;
